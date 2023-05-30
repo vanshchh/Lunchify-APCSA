@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order.css') }}">
+    <title>Lunchify</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img class="logo" src="static/images/logo3.png" alt="lunchify_logo.png">
+            <h2 class="logo">LUNCHIFY</h2>
+
+            <nav>
+                <ul>
+                    <li><a href="/" action="/">Home</a></li>
+                    <li><a style="color: #000000;" action="/order" onClick = "hide()">Order</a></li>
+                    <li><a href="about" action="/about">About</a></li>
+                    <li><a href="mailto:vc0829@pleasantonusd.net">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <a class="done" href="/" action="/">Done</a>
+    <p style="margin-left: 10px; color: white; padding: 20px;">Pay: $ {{pay}}</p>
+
+    <ul class="all">
+
+        <div id = "scs" class="food">
+            <img class="ty" src="static/images/spicychicken.png" alt="food.png">
+            <h4>Spicy Chicken Sandwich</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="spicy_chicken"/>
+                <input type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id = "cb" class="food">
+            <img class="ty" src="static/images/cheeseburger.png" alt="food.png">
+            <h4>Cheeseburger</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="cheeseburger"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id = "snack" class="food">
+            <img class="ty" src="static/images/snackers.png" alt="food.png">
+            <h4>Chicken Snackers</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="chicken_snackers"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id = "vb" class="food">
+            <img class="ty" src="static/images/veggieburger.png" alt="food.png">
+            <h4>Veggie Burger</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="veggie_burger"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id = "bt" class="food">
+            <img class="ty" src="static/images/taquito.png" alt="food.png">
+            <h4>Beef Taquito</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="beef_taquito"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id = "cq" class="food">
+            <img class="ty" src="static/images/quesadilla.png" alt="food.png">
+            <h4>Cheese Quesadilla</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="cheese_quesadilla"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id = "hd" class="food">
+            <img class="ty" src="static/images/hotdog.png" alt="food.png">
+            <h4>Hot Dog</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="hot_dog"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id = "cs" class="food">
+            <img class="ty" src="static/images/shwarma.png" alt="food.png">
+            <h4>Chicken Shwarma</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="chicken_shwarma"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+        
+        <div id="ocr"class="food">
+            <img class="ty" src="static/images/orange.png" alt="food.png">
+            <h4>Orange Chicken and Rice</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="orange_chicken"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id="jcr"class="food">
+            <img class="ty" src="static/images/jerkchicken.png" alt="food.png">
+            <h4>Jerk Chicken and Rice</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="jerk_chicken"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+
+        <div id="t"class="food">
+            <img class="ty" src="static/images/tacos.png" alt="food.png">
+            <h4>Tacos</h4>
+            <form enctype="multipart/form-data" method="POST">
+                <input name="id" type="number"/>
+                <input type="hidden" name="food_type" value="tacos"/>
+                <input name="order" type="submit" value="Place Order"/>
+            </form>
+        </div>
+        
+    </ul>
+
+    <script>
+        function hide(){
+            const d = new Date();
+            const f = d.getDay();
+            console.log(f);
+            console.log(d);
+            if (f == 1){
+                document.getElementById('hd').style.display = 'none';
+                document.getElementById('cs').style.display = 'none';
+                document.getElementById('jcr').style.display = 'none';
+                document.getElementById('t').style.display = 'none';
+            }
+            else if (f == 2){
+                document.getElementById('hd').style.display = 'none';
+                document.getElementById('ocr').style.display = 'none';
+                document.getElementById('jcr').style.display = 'none';
+                document.getElementById('t').style.display = 'none';
+            }
+            else if (f == 3){
+                document.getElementById('cs').style.display = 'none';
+                document.getElementById('ocr').style.display = 'none';
+                document.getElementById('jcr').style.display = 'none';
+                document.getElementById('t').style.display = 'none';
+            }
+            else if (f == 4){
+                document.getElementById('hd').style.display = 'none';
+                document.getElementById('cs').style.display = 'none';
+                document.getElementById('ocr').style.display = 'none';
+                document.getElementById('jcr').style.display = 'none';
+            }
+            else if (f == 5){
+                document.getElementById('hd').style.display = 'none';
+                document.getElementById('cs').style.display = 'none';
+                document.getElementById('ocr').style.display = 'none';
+                document.getElementById('t').style.display = 'none';
+        }
+        return true;
+    }
+    </script>
+
+    
+</body>
+</html>
